@@ -16,10 +16,7 @@ pipeline {
         stage('Apply Kubernetes Manifests') {
             steps {
  
-                    sh """
-                        echo "Aplicando manifestos da pasta ./k8s..."
-                        echo "namespace: ${NAMESPACE}"
-                    """
+                    sh ('kubectl apply --kubeconfig=$KUBE_CONFIG -f k8s/ --namespace=$NAMESPACE')
 
             }
         }
