@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+        agent {
+        docker {
+            image 'bitnami/kubectl:latest'
+        }
+    }
 
     environment {
         KUBE_CONFIG = credentials('kubeconfig') // ID da credencial com o kubeconfig
