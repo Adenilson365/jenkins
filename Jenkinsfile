@@ -18,7 +18,7 @@ pipeline {
  
                     sh """
                         echo "Aplicando manifestos da pasta ./k8s..."
-                        kubectl apply --kubeconfig=$KUBE_CONFIG -f k8s/ --namespace=$NAMESPACE
+                        kubectl apply --kubeconfig='$KUBE_CONFIG' -f k8s/ --namespace='$NAMESPACE'
                     """
 
             }
