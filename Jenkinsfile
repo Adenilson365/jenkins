@@ -15,10 +15,10 @@ pipeline {
 
         stage('Apply Kubernetes Manifests') {
             steps {
-                withEnv(["KUBECONFIG=${KUBE_CONFIG}"]) {
+                withEnv(["KUBECONFIG=$KUBE_CONFIG"]) {
                     sh """
                         echo "Aplicando manifestos da pasta ./k8s..."
-                        kubectl apply -f k8s/ --namespace=${NAMESPACE}
+                        kubectl apply --kubeconfig= -f k8s/ --namespace=${NAMESPACE}
                     """
                 }
             }
