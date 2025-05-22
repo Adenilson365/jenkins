@@ -14,7 +14,7 @@ pipeline {
             steps {
             sh '''
                 ls -l /var/jenkins_home/
-                ls -l /var/jenkins_home/k8s
+                ls -l /opt/k8s/
                 /var/jenkins_home/kubectl version 
                 /var/jenkins_home/kubectl --kubeconfig=/opt/k8s/kubeconfig get nodes
 
