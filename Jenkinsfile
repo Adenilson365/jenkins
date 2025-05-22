@@ -7,6 +7,12 @@ pipeline {
     }
 
     stages {
+        stage('PATH') {
+            steps {
+                sh 'export PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/jenkins_home/'
+            }
+        }
+    stages {
         stage('Checkout') {
             steps {
                 git branch: 'dev', url: 'https://github.com/Adenilson365/jenkins'
