@@ -10,9 +10,11 @@ pipeline {
 
     stages {
 
-        stage('PATH') {
+        stage('kubectl') {
             steps {
-                sh ('export PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/jenkins_home/')
+            sh '''
+                /var/jenkins_home/kubectl version 
+            '''
             }
         }
         stage('Checkout') {
