@@ -27,7 +27,7 @@ pipeline {
         stage('Apply Kubernetes Manifests') {
             steps {
  
-                    sh ('kubectl apply --kubeconfig=$KUBE_CONFIG -f k8s/ --namespace=$NAMESPACE')
+                    sh ('/var/jenkins_home/kubectl apply --kubeconfig=$KUBE_CONFIG -f k8s/ --namespace=$NAMESPACE')
 
             }
         }
