@@ -14,6 +14,7 @@ pipeline {
             steps {
             sh '''
                 /var/jenkins_home/kubectl version 
+                /var/jenkins_home/kubectl --kubeconfig=$KUBE_CONFIG get nodes
             '''
             }
         }
