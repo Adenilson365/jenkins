@@ -13,6 +13,8 @@ pipeline {
         stage('kubectl') {
             steps {
             sh '''
+                pwd
+                whoami
                 ls -l /var/jenkins_home/
                 ls -l /opt/k8s/
                 /var/jenkins_home/kubectl version 
