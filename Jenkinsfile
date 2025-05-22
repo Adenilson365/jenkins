@@ -15,6 +15,7 @@ pipeline {
             sh '''
                 pwd
                 whoami
+                ls -la
                 ls -l /var/jenkins_home/
                 ls -l /opt/k8s/
                 /var/jenkins_home/kubectl version 
