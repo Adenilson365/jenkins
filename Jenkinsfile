@@ -13,10 +13,11 @@ pipeline {
         stage('kubectl') {
             steps {
             sh '''
-                /var/jenkins_home/kubectl version 
-                /var/jenkins_home/kubectl --kubeconfig=$KUBE_CONFIG get nodes
                 ls -l /var/jenkins_home/
                 ls -l /var/jenkins_home/k8s
+                /var/jenkins_home/kubectl version 
+                /var/jenkins_home/kubectl --kubeconfig=$KUBE_CONFIG get nodes
+
             '''
             }
         }
